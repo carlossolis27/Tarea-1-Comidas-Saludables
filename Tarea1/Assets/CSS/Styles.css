@@ -1,0 +1,355 @@
+/*-------------------FIRST CONFIGURATION-------------------*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #F9EED6;
+}
+/*-------------------- NAV SECTION--------------------------*/
+nav{
+    width: 100%;
+    height: 50px;
+    background-color: #F9EED6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+a{
+    /** quitandole la decoracion al texto*/
+    text-decoration: none;
+}
+/*---------apartado del menu de navegacion----------------------*/
+nav a{
+    /**0(top, bottom) 20 xp(left,rigth) */
+    padding: 0 10px; /*espacio que tengo en los textos en el nav*/
+    color: #080808;  /*Color del texto que esta en el nav*/
+}
+
+/** aplicando pseudoclase - animacion */
+nav a:hover{
+    color: #BFC9D3;
+}
+/*---------- SLIDER AUTOMATICO---------------------*/
+#slider { /* Este Vendrias siendo la configuracion del contenedor donde van a ir las imagenes */
+    width: 100%;
+    height: 500px;
+    /*background-color: red;*/
+    margin: auto;
+    /*border-radius: 10px;*/
+    overflow: hidden; /* aqui estoy definiendo que solo se vea lo que tengo en mi contenedor creado */
+}
+
+#container {
+    display: grid; /* es en forma de rejilla */
+    width: 100%;
+    height: 500px;
+    grid-template-columns: 100% 100% 100% 100% 100%;
+    animation-name: movement;
+    animation-duration: 40s;
+    animation-iteration-count: infinite;
+}
+
+#imagen1 {
+    position: relative;
+    background-image: url(../img/Carne.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+#imagen2 {
+    position: relative;
+    background-image: url(../img/Pollo.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+#imagen3 {
+    position: relative;
+    background-image: url(../img/Pescado.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+#imagen4 {
+    position: relative;
+    background-image: url(../img/Verdura.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+#imagen5 {
+    position: relative;
+    background-image: url(../img/Fruta.jpg);
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-fondo{
+    position: absolute;
+    background: linear-gradient(red, blue);
+    width: 100%;
+    height: 500px;
+    opacity: 0.3;
+}
+
+h2{
+    position: relative;
+    width: 50%;
+    /*background-color: red;*/
+    margin: auto; /* con esto logro que el contenido de mi h2 me lo ponga en el centro */
+    margin-top: 5%; /*para color mi texto en el centro de la imagen*/
+    font-family: 'Dosis', sans-serif;
+    color: #F4DD0F;
+    font-size: 2em;
+    text-align: center;
+
+}
+
+.slider-text{
+    position: relative;
+    width: 80%;
+    /*background-color: red;*/
+    margin: auto; /* con esto logro que el contenido de mi h2 me lo ponga en el centro */
+    margin-top: 8%; /*para color mi texto en el centro de la imagen*/
+    font-family: 'Dosis', sans-serif;
+    font-weight: bold;
+    color: rgb(184, 211, 237);
+    font-size: 1.5em;
+    text-align: center;
+}
+
+@keyframes movement { /* Defino el tiempo entre las animaciones*/
+    20%{
+        margin-left: 0%;
+    }
+    42%{
+        margin-left: -100%;
+    }
+    62%{
+        margin-left: -200%; /* aumentando el porcentaje lo que logro esq vaya a la siguiente imagen */
+    }
+    82%{
+        margin-left: -300%;
+    }
+    100%{
+        margin-left: -400%;
+    }
+}
+/*------------------------MAIN CONFIGURATION------------------------*/
+.section-advise{
+    width: 100%;
+    height: 45px;
+    background-color: black;
+}
+h1{
+    text-align: center;
+    font-family: 'Permanent Marker', cursive;
+}
+
+h1::after{
+    content: ""; /* lo dejo vacio xq el texto lo defino en el keyframes */
+    animation: TextChange 15s linear;
+    animation-iteration-count: infinite;
+    align-items: center;
+}
+
+@keyframes TextChange{
+    25%{
+        content: "Los carbohidratos aportan la misma cantidad de calorías que las proteínas";
+        color: rgb(41, 255, 112);
+    }
+    50%{
+        content: "Las proteínas son los nutrientes que desempeñan un mayor número de funciones";
+        color: rgb(218, 255, 86);
+        
+    }
+    75%{
+        content: "Las vitaminas y minerales estimulan el funcionamiento del sistema inmunitario";
+        color: rgb(255, 86, 108);
+        
+    }
+    100%{
+        content: "El agua es trascendental para muchas funciones de nuestro cuerpo";
+        color: rgb(34, 251, 255);
+        
+    }
+}
+/*----------EXERCIES TIPS SECTION------------------*/
+.exercies-tips-container{
+    margin: auto;
+    width: 100%;
+    height: 60px;
+    align-items: center;
+}
+.exercies-tips{
+    /*animation: zoom 3s alternate-reverse;
+    animation-delay: 2s;*/
+    color: #2FC448;
+    /*animation-iteration-count: infinite;*/
+    margin-top: 3%;
+    text-align: center;
+    font-family: 'Anton', sans-serif;
+}
+@keyframes zoom{
+    0%{
+        scale: 1.5;
+        color: rgb(255, 16, 16); 
+    }
+}
+/*------------FLIP CARDS SECTION----------------*/
+
+/*-------CONTAINER FOR ALL CARDS---------*/
+.cards-container{
+    width: 100%;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: cover;
+    flex-wrap: wrap;
+    gap: 30px;
+    font-family: 'Shadows Into Light', cursive;
+    text-align: center;
+}
+/*-----------ALL CARDS-------------------*/
+.flip-card{
+    width: 230px;
+    height: 150px;
+    border-radius: 20px;
+    perspective: 1000px;
+    background-color: transparent;
+}
+
+.flip-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 0.6s;
+    transform-style: preserve-3d; /* hace que la imagen colocada cambie a la otra cuando gire la card 
+    si fuera flat la card girara con la imagen es decir se veria la misma imagen */
+}
+
+.flip-card:hover .flip-card-inner{
+    transform: rotateY(180deg);
+}
+
+.flip-card:hover{
+    cursor: pointer;
+}
+
+.flip-card-front, .flip-card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /*oculta lo que hay de la otra cara de la card*/
+}
+/*---------CONTENT STYLING---------------*/
+.flip-card-front, .flip-card-back{
+    display: grid;
+    place-items: center;
+}
+
+.flip-card-front{ /*esto es para como se ve el lado front de la card*/
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(151, 149, 149, 0.466); /*le agrega un borde a la carta*/
+    border-radius: 10px;
+}
+
+.flip-card-back{ /*esto es para como se ve la parte de atras de la card*/
+    background: linear-gradient(#D8A798, #7F6668);
+    transform: rotateY(180deg); /*esto hace q la imagen regrese a su posicion original cuando quito el cursor*/
+    box-shadow: 10px 10px 10px lightgray;
+    border-radius: 10px;
+}
+
+.flip-card-front img{
+    width: 100%;
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.flip-card-back h3{
+    color: #EAE722;
+}
+
+/*-----------FOOTER SECTION---------------*/
+
+.footer{
+    padding-block: 10px;
+    background-color: #151515;
+    color: #666873;
+    padding-bottom: 25px;
+}
+
+.footer_container{
+    max-width: 1600px;
+    margin: auto;
+    padding: 0 40px;
+}
+
+.footer_top{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    row-gap: 20px;
+}
+
+.footer_title{
+    font-size: 18px;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer_list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer_list-item{ /*esto sale en el primero */
+    list-style: none;
+}
+
+.footer_list-link{
+    transition: color 0.25s;
+    /*text-decoration: none;
+    color: inherit;*/
+}
+
+.footer_list-link:hover{
+    color: #f40000;
+}
+
+.footer_divider{
+    margin-block: 25px;
+    border: none;
+    border-top: 1px solid rgba(110, 222, 222, 0.715);
+}
+
+.footer_bottom{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer_list-bottom /*.footer_list*/{
+    flex-direction: row;
+}
